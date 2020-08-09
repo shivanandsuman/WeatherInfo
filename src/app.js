@@ -34,6 +34,13 @@ app.use(express.static(publicStaticPath));
     });
 });
 
+app.get('/help',(req,res)=>{
+    res.render('help',{
+        title: 'This is help.',
+        name: 'Shiva'
+    });
+});
+
 app.get('/weather',(req,res)=>{
     if(!req.query.address){
         return res.send({
